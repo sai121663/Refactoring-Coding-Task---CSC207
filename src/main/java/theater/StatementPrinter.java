@@ -59,10 +59,6 @@ public class StatementPrinter {
         return volumeCredits;
     }
 
-    private static String usd(int totalAmount) {
-        return NumberFormat.getCurrencyInstance(Locale.US).format(totalAmount / Constants.PERCENT_FACTOR);
-    }
-
     private static int getVolumeCredits(Performance performance) {
 
         int result = 0;
@@ -72,6 +68,10 @@ public class StatementPrinter {
             result += performance.getAudience() / Constants.COMEDY_EXTRA_VOLUME_FACTOR;
         }
         return result;
+    }
+
+    public static String usd(int totalAmount) {
+        return NumberFormat.getCurrencyInstance(Locale.US).format(totalAmount / Constants.PERCENT_FACTOR);
     }
 
     private static Play getPlay(Performance performance) {
