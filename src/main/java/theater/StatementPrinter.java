@@ -70,7 +70,7 @@ public class StatementPrinter {
         return result;
     }
 
-    public static String usd(int totalAmount) {
+    private static String usd(int totalAmount) {
         return NumberFormat.getCurrencyInstance(Locale.US).format(totalAmount / Constants.PERCENT_FACTOR);
     }
 
